@@ -1,0 +1,8 @@
+# The panel's address. DOMAIN comes from docker/.env.
+# Caddy gets and renews the HTTPS certificate by itself (ports 80 and 443 must be open).
+{$DOMAIN} {
+	root * /app/public
+	encode zstd gzip
+	php_fastcgi app:9000
+	file_server
+}
