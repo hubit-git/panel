@@ -1,0 +1,68 @@
+# Made and started by install.sh (it also writes the .env beside this file). Development: see docker-compose.dev.yml.
+# The first time, open https://DOMAIN: the installer asks for the database login:
+#   host db, port 3306, name panel, user panel, password = DB_PASSWORD of .env
+
+name: hubit-panel
+
+services:
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - app
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in docker/.env}
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+      - "${HTTPS_PORT:-443}:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - app_data:/app:ro
+      - caddy_data:/data
+    networks:
+      default:
+        # A fixed address: the panel believes X-Forwarded-For only from it
+        ipv4_address: 172.30.77.2
+
+  app:
+    image: ${PANEL_IMAGE:-ghcr.io/hubit-git/panel}:${PANEL_VERSION:-latest}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DOMAIN: ${DOMAIN}
+      TRUSTED_PROXIES: 172.30.77.2
+    volumes:
+      - app_data:/app
+
+  db:
+    image: mariadb:10.11
+    restart: unless-stopped
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MARIADB_DATABASE: panel
+      MARIADB_USER: panel
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in docker/.env}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Set DB_ROOT_PASSWORD in docker/.env}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  app_data:
+  db_data:
+  caddy_data:
+
+networks:
+  default:
+    ipam:
+      config:
+        # Other containers get addresses from the upper half, so 172.30.77.2 stays free for web
+        - subnet: 172.30.77.0/24
+          ip_range: 172.30.77.128/25
