@@ -1,0 +1,50 @@
+# Builds the Docker image of the panel from the zip of a release and pushes it to ghcr.io.
+# Run it by hand (Actions > Docker image > Run workflow) only when the runtime changes or new servers should
+# start on a newer version: running panels update themselves from the zip.
+name: Docker image
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version of the release whose zip goes into the image (for example 1.0.0)
+        required: true
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The image holds the product of the release, so the zip and the image are the same code
+      - name: Unpack the release zip
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          gh release download "v$VERSION" --repo "$GITHUB_REPOSITORY" --pattern "panel-$VERSION.zip" --dir /tmp/zip
+          mkdir dist
+          unzip -q "/tmp/zip/panel-$VERSION.zip" -d dist
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/Dockerfile
+          target: release
+          build-contexts: dist=./dist
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ inputs.version }}
+            ghcr.io/${{ github.repository }}:latest
