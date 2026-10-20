@@ -1,5 +1,7 @@
 <div align="center">
 
+📣 **Telegram channel: [t.me/ihubit](https://t.me/ihubit)**
+
 # Hubit Panel
 
 **Sell, renew and manage VPN subscriptions on autopilot.**
