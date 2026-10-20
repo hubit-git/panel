@@ -1,7 +1,5 @@
 <div align="center">
 
-📣 **کانال تلگرام: [t.me/ihubit](https://t.me/ihubit)**
-
 # هابیت پنل (Hubit Panel)
 
 **فروش، تمدید و مدیریت اشتراک VPN، کاملاً خودکار.**
@@ -10,6 +8,8 @@
 پنل ادمین · پنل نماینده · وب‌اپ مشتری · ربات تلگرام.
 
 [English](README.md) | **فارسی**
+
+📣 **کانال تلگرام: [t.me/ihubit](https://t.me/ihubit)**
 
 ![Docker](https://img.shields.io/badge/install-one%20command-2496ED?logo=docker&logoColor=white)
 ![PasarGuard](https://img.shields.io/badge/PasarGuard-supported-16a34a)
