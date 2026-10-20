@@ -1,5 +1,7 @@
 <div align="center">
 
+📣 **کانال تلگرام: [t.me/ihubit](https://t.me/ihubit)**
+
 # هابیت پنل (Hubit Panel)
 
 **فروش، تمدید و مدیریت اشتراک VPN، کاملاً خودکار.**
