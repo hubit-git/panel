@@ -131,6 +131,11 @@ if [ "$ready" = no ]; then
 fi
 
 # ---- The end: a banner and what to do now ----
+# Clear the screen first (only on a terminal) so the steps are the only thing left to read
+if [ -t 1 ] && [ -n "${TERM:-}" ]; then
+    clear
+fi
+
 printf '\033[1;36m'
 cat << 'ART'
 
