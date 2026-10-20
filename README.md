@@ -4,7 +4,7 @@
 
 **Sell, renew and manage VPN subscriptions on autopilot.**
 
-An all-in-one sales system for your **PasarGuard** and **3x-ui** panels:
+An all-in-one sales system for your **PasarGuard**, **3x-ui** and **Marzban** panels:
 admin panel · reseller panel · customer web app · Telegram bot.
 
 **English** | [فارسی](README.fa.md)
@@ -14,6 +14,7 @@ admin panel · reseller panel · customer web app · Telegram bot.
 ![Docker](https://img.shields.io/badge/install-one%20command-2496ED?logo=docker&logoColor=white)
 ![PasarGuard](https://img.shields.io/badge/PasarGuard-supported-16a34a)
 ![3x-ui](https://img.shields.io/badge/3x--ui-2.x%20%26%203.x-16a34a)
+![Marzban](https://img.shields.io/badge/Marzban-supported-16a34a)
 ![Telegram](https://img.shields.io/badge/Telegram-bot%20%26%20Mini%20App-26A5E4?logo=telegram&logoColor=white)
 ![Languages](https://img.shields.io/badge/languages-English%20%C2%B7%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C-black)
 
@@ -39,7 +40,7 @@ admin panel · reseller panel · customer web app · Telegram bot.
 | **Reseller panel** | Sell from assigned packages or your own custom plans, pay from a wallet, QR hand-over, renewals, bulk creation and sub-resellers. |
 | **Customer web app** | Shop, my subscriptions, wallet top-up, free trial, invite friends and earn rewards. |
 | **Telegram bot and Mini App** | Buy, renew, top up and get notices before a subscription ends. |
-| **Panels** | PasarGuard and 3x-ui (2.x and 3.x). Import the users of an existing panel, or rebuild a lost panel from your own data. |
+| **Panels** | PasarGuard, 3x-ui (2.x and 3.x) and Marzban. Import the users of an existing panel, or rebuild a lost panel from your own data. |
 | **Subscription links** | On your own domain, unchanged when the panel behind them changes. Links from an old panel keep working. |
 | **Payments** | ZarinPal, NOWPayments and card to card, with refund rules and referral rewards. |
 | **Interface** | Persian and English, light and dark themes, made for phones and desktops. |
