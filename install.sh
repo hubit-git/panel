@@ -130,20 +130,48 @@ if [ "$ready" = no ]; then
     warn "  cd $APP_DIR && docker compose logs web --tail 30"
 fi
 
+# ---- The end: a banner and what to do now ----
+printf '\033[1;36m'
+cat << 'ART'
+
+  ██╗  ██╗ ██╗   ██╗ ██████╗  ██╗ ████████╗
+  ██║  ██║ ██║   ██║ ██╔══██╗ ██║ ╚══██╔══╝
+  ███████║ ██║   ██║ ██████╔╝ ██║    ██║
+  ██╔══██║ ██║   ██║ ██╔══██╗ ██║    ██║
+  ██║  ██║ ╚██████╔╝ ██████╔╝ ██║    ██║
+  ╚═╝  ╚═╝  ╚═════╝  ╚═════╝  ╚═╝    ╚═╝
+
+  ██████╗   █████╗  ███╗   ██╗ ███████╗ ██╗
+  ██╔══██╗ ██╔══██╗ ████╗  ██║ ██╔════╝ ██║
+  ██████╔╝ ███████║ ██╔██╗ ██║ █████╗   ██║
+  ██╔═══╝  ██╔══██║ ██║╚██╗██║ ██╔══╝   ██║
+  ██║      ██║  ██║ ██║ ╚████║ ███████╗ ███████╗
+  ╚═╝      ╚═╝  ╚═╝ ╚═╝  ╚═══╝ ╚══════╝ ╚══════╝
+
+ART
+printf '\033[0m'
+
 cat << DONE
 
-The panel is installed.
+  The panel is installed. Do these steps in order:
 
-  Open     : $address
-  Folder   : $APP_DIR
+  1. Open the panel in your browser:
+       $address
 
-The installer asks for the database login:
+  2. The installer asks for the database. Type exactly this:
+       host     : db
+       port     : 3306
+       name     : panel
+       user     : panel
+       password : $DB_PASSWORD
+     (the password is also saved in $APP_DIR/.env)
 
-  host     : db
-  port     : 3306
-  name     : panel
-  user     : panel
-  password : $DB_PASSWORD
+  3. In the next page choose the username and password of the admin.
 
-Then add the cron line the panel shows you (Settings), so its jobs run every minute.
+  4. Add the cron job (required: without it nothing runs in the background).
+     In the panel open  Management > Settings > General > "Site address and cron",
+     copy the wget line and run  crontab -e  on this server to paste it.
+
+  Problems?  cd $APP_DIR && docker compose logs --tail 30
+
 DONE
