@@ -1,7 +1,5 @@
 <div align="center">
 
-📣 **Telegram channel: [t.me/ihubit](https://t.me/ihubit)**
-
 # Hubit Panel
 
 **Sell, renew and manage VPN subscriptions on autopilot.**
@@ -10,6 +8,8 @@ An all-in-one sales system for your **PasarGuard** and **3x-ui** panels:
 admin panel · reseller panel · customer web app · Telegram bot.
 
 **English** | [فارسی](README.fa.md)
+
+📣 **Telegram channel: [t.me/ihubit](https://t.me/ihubit)**
 
 ![Docker](https://img.shields.io/badge/install-one%20command-2496ED?logo=docker&logoColor=white)
 ![PasarGuard](https://img.shields.io/badge/PasarGuard-supported-16a34a)
