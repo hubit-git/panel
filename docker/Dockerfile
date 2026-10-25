@@ -22,7 +22,7 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-pl
 FROM php:8.1-fpm-bookworm AS runtime
 LABEL org.opencontainers.image.source="https://github.com/hubit-git/panel"
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
-RUN install-php-extensions pdo_mysql zip opcache ioncube_loader
+RUN install-php-extensions pdo_mysql zip gd opcache ioncube_loader
 
 # The panel's files wait in /opt/panel-dist. /app is a volume (files, storage and .env together, so the panel can
 # update itself the same way as on any host); the entrypoint fills it from here the first time.
