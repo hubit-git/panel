@@ -45,6 +45,10 @@ admin panel · reseller panel · customer web app · Telegram bot.
 | **Payments** | ZarinPal, NOWPayments and card to card, with refund rules and referral rewards. |
 | **Interface** | Persian and English, light and dark themes, made for phones and desktops. |
 
+**New in 1.5:** one package sold in several countries, each at its own price · premium emoji in the bot · a separate domain for the store's bot and Mini App.
+
+<img src="screenshots/locations-en.png" alt="Choosing the location while buying in the reseller panel" width="440">
+
 ## Quick start
 
 ```bash
