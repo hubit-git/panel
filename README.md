@@ -40,14 +40,11 @@ admin panel · reseller panel · customer web app · Telegram bot.
 | **Reseller panel** | Sell from assigned packages or your own custom plans, pay from a wallet, QR hand-over, renewals, bulk creation and sub-resellers. |
 | **Customer web app** | Shop, my subscriptions, wallet top-up, free trial, invite friends and earn rewards. |
 | **Telegram bot and Mini App** | Buy, renew, top up and get notices before a subscription ends. |
+| **Multi-location** | One package sold in several countries, each at its own price; the buyer picks the country and renewals stay in it. |
 | **Panels** | PasarGuard, 3x-ui (2.x and 3.x) and Marzban. Import the users of an existing panel, or rebuild a lost panel from your own data. |
 | **Subscription links** | On your own domain, unchanged when the panel behind them changes. Links from an old panel keep working. |
 | **Payments** | ZarinPal, NOWPayments and card to card, with refund rules and referral rewards. |
 | **Interface** | Persian and English, light and dark themes, made for phones and desktops. |
-
-**New in 1.5:** one package sold in several countries, each at its own price · premium emoji in the bot · a separate domain for the store's bot and Mini App.
-
-<img src="screenshots/locations-en.png" alt="Choosing the location while buying in the reseller panel" width="440">
 
 ## Quick start
 
