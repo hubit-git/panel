@@ -42,6 +42,7 @@ admin panel · reseller panel · customer web app · Telegram bot.
 | **Telegram bot and Mini App** | Buy, renew, top up and get notices before a subscription ends. |
 | **Multi-location** | One package sold in several countries, each at its own price; the buyer picks the country and renewals stay in it. |
 | **Panels** | PasarGuard, 3x-ui (2.x and 3.x) and Marzban. Import the users of an existing panel, or rebuild a lost panel from your own data. |
+| **Subscription page** | Ready templates, or your own (a zip or html, even one made with React or an AI) with its own settings; suggested apps with icons, sorted by the visitor's system. |
 | **Subscription links** | On your own domain, unchanged when the panel behind them changes. Links from an old panel keep working. |
 | **Payments** | ZarinPal, NOWPayments and card to card, with refund rules and referral rewards. |
 | **Interface** | Persian and English, light and dark themes, made for phones and desktops. |
